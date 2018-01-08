@@ -1,0 +1,10 @@
+/home/horatiu/Desktop/Task1/bin/Debug/netcoreapp2.0/Task1.deps.json
+/home/horatiu/Desktop/Task1/bin/Debug/netcoreapp2.0/Task1.runtimeconfig.json
+/home/horatiu/Desktop/Task1/bin/Debug/netcoreapp2.0/Task1.runtimeconfig.dev.json
+/home/horatiu/Desktop/Task1/bin/Debug/netcoreapp2.0/Task1.dll
+/home/horatiu/Desktop/Task1/bin/Debug/netcoreapp2.0/Task1.pdb
+/home/horatiu/Desktop/Task1/obj/Debug/netcoreapp2.0/Task1.csproj.CoreCompileInputs.cache
+/home/horatiu/Desktop/Task1/obj/Debug/netcoreapp2.0/Task1.AssemblyInfoInputs.cache
+/home/horatiu/Desktop/Task1/obj/Debug/netcoreapp2.0/Task1.AssemblyInfo.cs
+/home/horatiu/Desktop/Task1/obj/Debug/netcoreapp2.0/Task1.dll
+/home/horatiu/Desktop/Task1/obj/Debug/netcoreapp2.0/Task1.pdb
