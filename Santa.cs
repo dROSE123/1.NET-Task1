@@ -8,27 +8,29 @@ namespace Task1
         public string HairColor { get; set; }
         public string Name { get; set; }
 
-        public int SecretCod { get; set; }
+        public int Weight { get; set; }
 
-        public Santa (string name, string haircolor, int age, int secretcod)
+        public Santa (string name, string haircolor, int age, int weight)
         {
             Name = name;
             HairColor = haircolor;
             Age = age;
-            SecretCod = secretcod;
+            Weight = weight;
         }
 
-        public virtual void LetsRide()
+        public virtual void LetsRide(int nr, int power)
         {
-            if (SecretCod > 19)
-            {
-                Console.WriteLine("Sania a pornit!");
-            }
-            else
+            if (power < 50)
             {
                 Console.WriteLine("Sania nu a pornit!");
             }
-
+            else
+            {
+                if((Weight * nr + power % 10) / 2 > 50)
+                {
+                    Console.WriteLine("Sania a pornit! :)");
+                }
+            }
         }
     }
 

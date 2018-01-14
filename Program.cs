@@ -22,16 +22,12 @@ namespace Task1
 
             InfrastructureElf Ielf = new InfrastructureElf("Tibi", "Useriu", 14, 1, "Pascal", "Imi place sa dau cu capul de pereti");
 
-            Santa Santa_Claus = new Santa("Mos Craciun", "verde", 99, 20);
+            Santa Santa_Claus = new Santa("Mos Craciun", "verde", 99, 70);
 
-            MechanicElf Melf = new MechanicElf("Dinu", "Alask", 29, 2, 123, 4);
+            MechanicElf Melf = new MechanicElf("Dinu", "Alask", 29, 2);
 
 
             // o zi la Polul Nord
-
-            Dimineata dim = new Dimineata();
-
-            dim.Soare();
 
             // mosul are in vedere niste copii
 
@@ -39,7 +35,8 @@ namespace Task1
             Children copil2 = new Children("Horatiu", "Valenii de Munte", "pacea-n lume", 1);              
 
             string[] SantaGiftBag = new string[50]; // sacul in care vom salva jucariile copiilor
-            int k;                     
+            int k;
+            int nr_gifts = 5;              
 
             // mosul cere mai multe jucarii pe care le pune in sac si niste mancare
 
@@ -47,9 +44,9 @@ namespace Task1
  
             // si pe langa niste jucarii pe care le duce pentru copii din afirca
             // *astia merita chit ca au fost buni sau rai*
-            for (int i = 0; i < 5; i ++)
+            for (int i = 0; i < nr_gifts; i ++)
             {
-                k = rnd.Next(0, 4);
+                k = rnd.Next(0, nr_gifts - 1);
                 SantaGiftBag[i] = GMelf.GetGift(k);
             }
 
@@ -59,6 +56,7 @@ namespace Task1
             {
                 SantaGiftBag[5] = copil1.Gift;
                 Console.WriteLine("{0} isi primeste cadoul", copil1.Name);
+                nr_gifts ++;
             }
             else 
             {
@@ -69,6 +67,7 @@ namespace Task1
             {
                 SantaGiftBag[6] = copil2.Gift;
                 Console.WriteLine("{0} isi primeste cadoul", copil2.Name);
+                nr_gifts++;
             }
             else 
             {
@@ -76,13 +75,14 @@ namespace Task1
             }
 
             // dupa atata munca e timpul si pentru niste mancare
+            // si de aceea el are nevoie de un elf bucatar sa ii gateasca
 
             k = rnd.Next(0, 3);
             Console.WriteLine("La masa avem {0}", Celf.GetFood(k));
 
             // dupa ce atat sacul cat si burta mosului sunt pline
-            // mosul decide sa cheme renii de craciun
-            // pentru ca ei s-au antrenat din greu el are nevoie doar de doi
+            // mosul decide sa-si cheme cei 2 renii de craciun
+            // e criza si la polul nord
 
             TryHardReindeer Ren1 = new TryHardReindeer("Sven", 10, 2, 8);
             TryHardReindeer Ren2 = new TryHardReindeer("Mithy", 12, 4, 6);
@@ -90,14 +90,27 @@ namespace Task1
             Console.WriteLine("O, dar vai, cine a venit! Sunt chiar {0} si {1} renii de nadejde ai mosului!", Ren1.Name, Ren2.Name);
 
             // elful mecanic verifica daca sania este incarcata
+            // el trebuie sa stie numarul de cadouri din sanie
+            // si pe baza unor formule din antichitate acesta va calcula daca sania este pregatita sau nu
 
-            Melf.ItsEquipped();
+            Melf.ItsEquipped(nr_gifts);
 
             // mosul verifica daca sania porneste
+            // pentru asta el are nevoie sa isi cunoasca greutatea, nr de reni
+            // si forta de tractiune a renilor
 
-            Santa_Claus.LetsRide();
+            Santa_Claus.LetsRide(2, Ren1.ReindeerPower());
 
+            // din pacate Sven nu este indeajuns de puternic
+            // cred ca mosul are nevoie de ambi reni
+
+            Santa_Claus.LetsRide(2, Ren1.ReindeerPower() + Ren2.ReindeerPower());
+
+            // se pare ca de aceasta data sania a pornit iar mosul a plecat sa livreze cadourile
             // si pleaca sa livreze cadourile
+
+            Console.WriteLine("Hohoh! Sesiune usoara!");
+
         }
     }
 }

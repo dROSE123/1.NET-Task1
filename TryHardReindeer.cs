@@ -25,5 +25,9 @@ namespace Task1
                 return Age * 5;
             }
         }
+
+        public int ReindeerPower() {
+            return 2 * NrWings + HoursToWork * 4;
+        }
     }
 }
